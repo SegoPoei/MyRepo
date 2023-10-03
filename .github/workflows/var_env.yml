@@ -23,4 +23,4 @@ jobs:
 		runs-on: ubuntu-latest
 		steps:
 			- name: "Dit au revoir"
-				run: echo "AU revoir $NAME! Pour quelle entreprise travailles-tu? $ENTREPRISE !"
+				run: echo "AU revoir $NAME! Pour quelle entreprise travailles-tu? $ENTREPRISE"
