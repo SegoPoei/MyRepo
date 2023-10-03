@@ -1,0 +1,18 @@
+name: Push-or-Pull
+on: [push, pull_request]
+
+jobs:
+  say_push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: steps say push
+        run: echo "C'est un push !"
+
+  say_PR:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request'}}
+    steps:
+        - uses: actions/checkout@v4
+        - name: steps say pull
+          run: echo "C'est une pull request !"

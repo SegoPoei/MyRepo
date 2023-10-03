@@ -1,6 +1,6 @@
 name: Variables
 # Event trigger qui implique de déclencher le workflow à la main
-on: workflow_dispatch
+on: [workflow_dispatch]
 env:
   NAME: Francois
 
