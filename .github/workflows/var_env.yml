@@ -1,26 +1,25 @@
 name: Variables
-
+# Event trigger qui implique de déclencher le workflow à la main
 on: workflow_dispatch
 env:
-	NAME: Francois
+  NAME: Francois
 
 jobs:
-	say_hello:
-		runs-on: ubuntu-latest
-		env:
-			ENTREPRISE: Semifir
-		steps:
-			- name: "Dit bonjour"
-				run : echo "Salut $NAME! Tu travailles chez $ENTREPRISE ? Alors bon $DAY à toi!"
-				env:
-					DAY: Mardi
+  say_hello:
+    runs-on: ubuntu-latest
+    env:
+      ENTREPRISE: Semifir
+    steps:
+      - name: "Dit bonjour"
+        run: echo "Salut $NAME! Tu travailles ches $ENTREPRISE ? Alors bon $DAY à toi !"
+        env:
+          DAY: Mardi
+      
+      - name: "Mardi ?"
+        run: echo "Quel jour somme-nous ? --> $DAY !"
 
-			- name: "Mardi ?"
-				run: echo "Quel jour sommes-nous? --> $DAY !"
-#ici on aura pas de réponse car la variable Mardi est indentée et seulement renseignée pour la step Dit bonjour.
-
-	say_goodbye:
-		runs-on: ubuntu-latest
-		steps:
-			- name: "Dit au revoir"
-				run: echo "AU revoir $NAME! Pour quelle entreprise travailles-tu? $ENTREPRISE "
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir"
+        run: echo "Au revoir $NAME! POur QUelle entreprise travailles-tu ? $ENTREPRISE"
